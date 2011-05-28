@@ -5,7 +5,11 @@ $( function () {
     var apiUrl = 'http://ec2-50-19-37-197.compute-1.amazonaws.com/owr/core.php?callback=?';
 
     var doc = $('#owr').text();
-    var data = { "text" : encodeURI(doc) };
+    var modifiedSerial = Date.parse(document.lastModified);
+    var data = {
+      "text": encodeURI(doc),
+      "modified": modifiedSerial
+    };
 
     $.getJSON(apiUrl, data, function(json){
       var mp4Elem = $('<source src="'+json.audios.mp4+'">');
