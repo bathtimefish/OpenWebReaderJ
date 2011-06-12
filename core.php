@@ -31,7 +31,7 @@ echo $callbackId . '(' . $response . ')';
 
 
 function checkApiKey($key) {
-    if (!empty($key) return true;
+    if (!empty($key)) return true;
     return false;
 }
 
