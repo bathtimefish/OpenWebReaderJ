@@ -1,8 +1,9 @@
 $( function () {
 
   $(window).load( function() {
-    
-    var apiUrl = 'http://ec2-50-17-144-29.compute-1.amazonaws.com/owr/core.php?callback=?';
+
+    var apiUrl = location.protocol + '//' + location.hostname + '/owr/core.php?callback=?';
+    //var apiUrl = 'http://ec2-50-19-37-197.compute-1.amazonaws.com/owr/core.php?callback=?';
 
     var doc = $('#owr').text();
     var modifiedSerial = Date.parse(document.lastModified);
